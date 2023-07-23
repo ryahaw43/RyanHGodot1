@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://7j2bl3i5s1mf"]
+
+[ext_resource type="Script" path="res://Characters/player.gd" id="1_0pyda"]
+[ext_resource type="Texture2D" uid="uid://djnpxbs1tapph" path="res://Crow Animations/crow_idle.png" id="1_y1haq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1f21a"]
+radius = 9.0
+height = 26.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_0pyda")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_y1haq")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_1f21a")
