@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690096103
+::res://::1690361192
 icon.svg::CompressedTexture2D::8763813585829708781::1690088170::1690088175::1::::<><>::
 ::res://Art/::1690088292
 ::res://Art/Legacy-Fantasy - High Forest 2.3/::1690088293
@@ -67,9 +67,9 @@ Golden-Tree.png::CompressedTexture2D::7060707781573637113::1656983118::169008830
 Green-Tree.png::CompressedTexture2D::8435009758102399448::1656982632::1690088307::1::::<><>::
 Red-Tree.png::CompressedTexture2D::2960632186102283299::1656983132::1690088307::1::::<><>::
 Yellow-Tree.png::CompressedTexture2D::7200397753225645845::1656982764::1690088307::1::::<><>::
-::res://Characters/::1690096585
-player.tscn::PackedScene::2266264162217860341::1690096585::0::1::::<><>::res://Characters/player.gd<>uid://djnpxbs1tapph::::res://Crow Animations/crow_idle.png<>uid://clsnlmvpsu75s::::res://Crow Animations/crow_walk.png<>uid://ftbvea2xf8xd::::res://Crow Animations/crow_jump.png
-player.gd::GDScript::-1::1690095273::0::1::::<>CharacterBody2D<>::
+::res://Characters/::1690361287
+player.gd::GDScript::-1::1690361196::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2266264162217860341::1690361287::0::1::::<><>::res://Characters/player.gd<>uid://djnpxbs1tapph::::res://Crow Animations/crow_idle.png<>uid://clsnlmvpsu75s::::res://Crow Animations/crow_walk.png<>uid://ftbvea2xf8xd::::res://Crow Animations/crow_jump.png
 ::res://Crow Animations/::1690088307
 crow_attack.png::CompressedTexture2D::41244220835806686::1677280142::1690088307::1::::<><>::
 crow_damage.png::CompressedTexture2D::928639997763001434::1677280210::1690088307::1::::<><>::
@@ -78,8 +78,8 @@ crow_death2.png::CompressedTexture2D::8684632068437159087::1677280242::169008830
 crow_idle.png::CompressedTexture2D::7818750464312240177::1677280156::1690088307::1::::<><>::
 crow_jump.png::CompressedTexture2D::390265825533195149::1677280196::1690088307::1::::<><>::
 crow_walk.png::CompressedTexture2D::5582887075044056174::1677280174::1690088307::1::::<><>::
-::res://Levels/::1690096603
-level.tscn::PackedScene::4768755776384806173::1690096603::0::1::::<><>::uid://dqiwifq8otnvi::::res://Art/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png<>uid://7j2bl3i5s1mf::::res://Characters/player.tscn<>uid://c77eth83q58w0::::res://parallax_forest_pack web/layers/parallax-forest-back-trees.png<>uid://upfb8k03dgm6::::res://parallax_forest_pack web/layers/parallax-forest-middle-trees.png
+::res://Levels/::1690361287
+level.tscn::PackedScene::4768755776384806173::1690361287::0::1::::<><>::uid://dqiwifq8otnvi::::res://Art/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png<>uid://7j2bl3i5s1mf::::res://Characters/player.tscn<>uid://c77eth83q58w0::::res://parallax_forest_pack web/layers/parallax-forest-back-trees.png<>uid://upfb8k03dgm6::::res://parallax_forest_pack web/layers/parallax-forest-middle-trees.png
 ::res://parallax_forest_pack web/::1690096103
 license.txt::TextFile::-1::1491702158::0::1::::<><>::
 ::res://parallax_forest_pack web/layers/::1690096106
