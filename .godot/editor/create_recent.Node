@@ -1,9 +1,14 @@
+CollisionShape2D
+Area2D
+TileMap
+Button
+VBoxContainer
 Sprite2D
+AnimationPlayer
+Node2D
 ParallaxLayer
 ParallaxBackground
 AnimatedSprite2D
 RemoteTransform2D
 Camera2D
-CollisionShape2D
 CharacterBody2D
-TileMap

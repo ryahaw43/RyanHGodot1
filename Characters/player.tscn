@@ -1,9 +1,30 @@
-[gd_scene load_steps=25 format=3 uid="uid://7j2bl3i5s1mf"]
+[gd_scene load_steps=31 format=3 uid="uid://7j2bl3i5s1mf"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_0pyda"]
 [ext_resource type="Texture2D" uid="uid://djnpxbs1tapph" path="res://Crow Animations/crow_idle.png" id="1_y1haq"]
+[ext_resource type="Texture2D" uid="uid://t8jy7nnbomw" path="res://Crow Animations/crow_attack.png" id="2_fjk3p"]
 [ext_resource type="Texture2D" uid="uid://clsnlmvpsu75s" path="res://Crow Animations/crow_walk.png" id="3_4qff2"]
 [ext_resource type="Texture2D" uid="uid://ftbvea2xf8xd" path="res://Crow Animations/crow_jump.png" id="3_jgj0u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjytc"]
+atlas = ExtResource("2_fjk3p")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gri0b"]
+atlas = ExtResource("2_fjk3p")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ygd"]
+atlas = ExtResource("2_fjk3p")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmrxb"]
+atlas = ExtResource("2_fjk3p")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34sbg"]
+atlas = ExtResource("2_fjk3p")
+region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnxv4"]
 atlas = ExtResource("1_y1haq")
@@ -79,6 +100,26 @@ region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsail"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjytc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gri0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ygd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmrxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34sbg")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wnxv4")
@@ -163,13 +204,13 @@ animations = [{
 radius = 9.0
 height = 26.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_0pyda")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-32, -32)
 sprite_frames = SubResource("SpriteFrames_jsail")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 centered = false
 

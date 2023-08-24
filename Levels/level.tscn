@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b87ayf2y2aein"]
+[gd_scene load_steps=9 format=3 uid="uid://b87ayf2y2aein"]
 
 [ext_resource type="Texture2D" uid="uid://dqiwifq8otnvi" path="res://Art/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_nc7yn"]
 [ext_resource type="PackedScene" uid="uid://7j2bl3i5s1mf" path="res://Characters/player.tscn" id="2_hffti"]
 [ext_resource type="Texture2D" uid="uid://c77eth83q58w0" path="res://parallax_forest_pack web/layers/parallax-forest-back-trees.png" id="3_vq730"]
 [ext_resource type="Texture2D" uid="uid://upfb8k03dgm6" path="res://parallax_forest_pack web/layers/parallax-forest-middle-trees.png" id="4_bdfju"]
+[ext_resource type="Script" path="res://Levels/Area2D.gd" id="5_6ic4d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14srm"]
 texture = ExtResource("1_nc7yn")
@@ -1427,6 +1428,9 @@ texture = ExtResource("1_nc7yn")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_14srm")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chcfw"]
+size = Vector2(20, 66)
+
 [node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1439,32 +1443,40 @@ layer_0/tile_data = PackedInt32Array(-9, 0, 1, 65527, 0, 2, 131063, 0, 3, 196599
 [node name="Player" parent="." instance=ExtResource("2_hffti")]
 position = Vector2(5, 28)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(5, 28)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 process_callback = 0
+limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_right_margin = 0.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(76.475, 56.045)
+scale = Vector2(1.6, 1.6)
+transform = Transform2D(1.6, 0, 0, 1.6, 76.475, 56.045)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(200, 0)
+motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(272, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-165, -14)
-scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_vq730")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(200, 0)
+motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(272, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(-191, -10)
-scale = Vector2(0.8, 0.934)
 texture = ExtResource("4_bdfju")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_6ic4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1217, 57)
+shape = SubResource("RectangleShape2D_chcfw")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

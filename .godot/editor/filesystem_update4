@@ -1,3 +1,7 @@
 res://Levels/level.tscn
 res://Characters/player.gd
 res://Characters/player.tscn
+res://Menu.tscn
+res://level_2.tscn
+res://Levels/CollisionShape2D.gd
+res://Levels/Area2D.gd
